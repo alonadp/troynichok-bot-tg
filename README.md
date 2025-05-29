@@ -1,68 +1,77 @@
 # troynichok-bot-tg
 Telegram bot for daily predictions
-## Описание
-Тройничок - это **Telegram-бот**, который каждый день отправляет предсказания и может вести философские беседы с пользователями. Бот написан на Python и использует **OpenAI GPT** для генерации текстов и ответов.
+## Description
+**Troynichok** is a **Telegram bot** that sends daily predictions and can engage in philosophical conversations with users. The bot is written in Python and uses **OpenAI GPT** to generate texts and responses.
+### Features:
+* **Daily Predictions**: The bot sends users random philosophical predictions every day.
+* **Conversations with the Bot**: The bot can answer questions and engage in conversations, thanks to integration with OpenAI.
+* **Command Management**: You can manage the bot using simple commands in the chat.
+* **Flexible Configuration**: You can set the prediction sending time, logging level, and other parameters.
 
-### Возможности:
-- **Ежедневные предсказания**: Бот отправляет пользователям случайные философские предсказания каждый день.
-- **Беседы с ботом**: Бот может отвечать на вопросы и поддерживать беседу, благодаря интеграции с OpenAI.
-- **Управление через команду**: Ты можешь управлять ботом с помощью простых команд в чате.
-- **Гибкая настройка**: Ты можешь настроить время отправки предсказаний, уровень логирования и другие параметры.
+## Installation and Setup
 
-## Установка и настройка
+### 1. Clone the Repository
 
-### 1. Клонируйте репозиторий
+Start by cloning this repository to your local machine using Git:
 
-Для начала клонируйте этот репозиторий на свой локальный компьютер с помощью Git:
-
-```git clone https://github.com/ТВОЙ_ПОЛЬЗОВАТЕЛЬ/ТВОЙ_РЕПОЗИТОРИЙ.git```
-
-## Установка зависимостей
-Перед тем как запустить бота, необходимо установить все зависимости, указанные в проекте. Для этого выполните команду:
-```pip install -r requirements.txt```
-
-## Создание файла конфигурации
-Тебе нужно создать файл конфигурации config.py, в котором будут храниться данные, необходимые для работы бота (например, токен для Telegram и API-ключ для OpenAI).
-В корне проекта создайте файл config.py.
-Добавьте в него следующие настройки:
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 ```
-# Токен для Telegram-бота
+
+## Install Dependencies
+
+Before running the bot, you need to install all the dependencies listed in the project. To do this, run the command:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Create Configuration File
+
+You need to create a configuration file `config.py` where the data required for the bot's operation will be stored (such as the Telegram token and the OpenAI API key).
+
+1. Create the `config.py` file in the root of the project.
+2. Add the following configuration settings:
+
+```python
+# Telegram bot token
 TOKEN = "your token here"
 
-# API-ключ для OpenAI
+# OpenAI API key
 OPENAI_API_KEY = "your-api-key-here"
 
-# Имя бота (включая "bot" в конце)
+# Bot username (including "bot" at the end)
 BOT_USERNAME = "mainadminnbot"
 
-# Список ID пользователей, которые будут админами
+# List of user IDs who will be admins
 ADMIN_IDS = []
 
-# Настройки для API запросов
-REQUEST_TIMEOUT = 30  # Время ожидания ответа API в секундах
+# API request settings
+REQUEST_TIMEOUT = 30  # API response timeout in seconds
 
-# Настройки для расписания
-PREDICTION_TIME = "09:00"  # Время отправки ежедневных предсказаний
+# Scheduling settings
+PREDICTION_TIME = "09:00"  # Time for sending daily predictions
 
-# Настройки логирования
-LOG_LEVEL = "INFO"  # Уровень логирования (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+# Logging settings
+LOG_LEVEL = "INFO"  # Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
 LOG_FILE = "bot.log"
 
-# Список разрешенных chat ID
+# List of allowed chat IDs
 ALLOWED_CHAT_IDS = []
 ```
-## Замените заглушки на свои данные:
-TOKEN: Получите токен для своего бота через BotFather.
 
-OPENAI_API_KEY: Получите ключ для доступа к OpenAI, зарегистрировавшись на OpenAI.
+## Replace the placeholders with your data:
 
-BOT_USERNAME: Укажите имя своего бота в Telegram (оно должно заканчиваться на bot).
+* **TOKEN**: Get the token for your bot via [BotFather](https://core.telegram.org/bots#botfather).
+* **OPENAI\_API\_KEY**: Get your API key from [OpenAI](https://platform.openai.com/signup).
+* **BOT\_USERNAME**: Enter your bot's name in Telegram (it should end with "bot").
+* **ADMIN\_IDS**: Add the user IDs of those who will be admins.
 
-ADMIN_IDS: Добавьте ID своих пользователей, которые будут администраторами.
+## Running the Bot
 
-## Запуск бота
-Теперь, когда файл конфигурации настроен, можно запустить бота. Для этого выполните команду:
+Now that the configuration file is set up, you can run the bot. To do this, execute the command:
 
-```
+```bash
 python bot.py
 ```
+
